@@ -2,7 +2,7 @@
 
 class ControladorProductos{
 
-    public function ctrProductos(){
+    static public function ctrProductos(){
 
         include "vistas/productos.php";
 

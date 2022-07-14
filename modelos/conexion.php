@@ -2,7 +2,7 @@
 
 class Conexion {
 
-    public function conectar() {
+    static public function conectar() {
 
         $link = new PDO("mysql:host=localhost;dbname=php_jdoc_adsi",
                         "root",
@@ -10,7 +10,7 @@ class Conexion {
         
         $link->exec("set names utf8");
         
-        return $link;
+        return $link;        
 
     }
 

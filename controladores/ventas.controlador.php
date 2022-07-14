@@ -2,7 +2,7 @@
 
 class ControladorVentas{
 
-    public function ctrVentas(){
+    static public function ctrVentas(){
 
         include "vistas/ventas.php";
 

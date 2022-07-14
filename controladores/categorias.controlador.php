@@ -2,7 +2,7 @@
 
 class ControladorCategorias{
 
-    public function ctrCategorias(){
+    static public function ctrCategorias(){
 
         include "vistas/categorias.php";
 

@@ -13,8 +13,12 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Favicon -->
   <link rel="icon" href="vistas\img\plantilla\icono-negro.png">
+
   <!-- PLUGUINS CSS -->
 
+  <!-- DataTable -->
+  <link rel="stylesheet" href="vistas\bower_components\datatables.net-bs\css\dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="vistas\bower_components\datatables.net-bs\css\responsive.bootstrap.min.css">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="vistas/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -38,6 +42,13 @@
   <script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
+  <!-- DataTable -->
+  <script src="vistas\bower_components\datatables.net\js\jquery.dataTables.min.js"></script>
+  <script src="vistas\bower_components\datatables.net-bs\js\dataTables.bootstrap.min.js"></script>
+  <script src="vistas\bower_components\datatables.net-bs\js\dataTables.responsive.min.js"></script>
+  <script src="vistas\bower_components\datatables.net-bs\js\responsive.bootstrap.min.js"></script>
+  <!-- SweetAlert 2 -->
+  <script src="vistas\plugins\sweetalert2\sweetalert2.all.js"></script>
 </head>
 
 <body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
@@ -89,8 +100,9 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok")
 
 ?>
 
-
   <script src="vistas/js/plantilla.js"></script>
+  <script src="vistas/js/usuarios.js"></script>
+  
 </body>
 
 </html>
