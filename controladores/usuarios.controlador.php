@@ -314,7 +314,7 @@ class ControladorUsuarios{
 
                 }else{
 
-                    $encriptar = $passwordActual;                    
+                    $encriptar = $_POST["passwordActual"];                    
 
                 }
 
@@ -389,33 +389,34 @@ class ControladorUsuarios{
                 unlink($_GET["fotoUsuario"]);
                 rmdir('vistas/img/usuarios/'.$_GET["usuario"]);
 
-        }
 
-        $respuesta = ModeloUsuarios::mdlBorrarUsuario($tabla, $datos);
+                $respuesta = ModeloUsuarios::mdlBorrarUsuario($tabla, $datos);
 
-        if($respuesta == "ok"){
+                if($respuesta == "ok"){
+        
+                    echo '<script>
+                                    
+                                swal({
+        
+                                    type: "success",
+                                    title: "¡Usuario eliminado correctamente!",
+                                    showConfirmButton: true,
+                                    confirmButtonText: "Cerrar",
+                                    closeOnConfirm: false
+                                    }).then((result)=>{
+                                        if(result.value){
+        
+                                        window.location = "usuarios";
+        
+                                    }
+        
+                                    });
+        
+                            </script>';
+                    
+                }
 
-            echo '<script>
-                            
-                        swal({
-
-                            type: "success",
-                            title: "¡Usuario eliminado correctamente!",
-                            showConfirmButton: true,
-                            confirmButtonText: "Cerrar",
-                            closeOnConfirm: false
-                            }).then((result)=>{
-                                if(result.value){
-
-                                window.location = "usuarios";
-
-                            }
-
-                            });
-
-                    </script>';
-            
-        }
+        }       
 
     }
 
