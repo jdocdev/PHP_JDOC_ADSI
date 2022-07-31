@@ -128,8 +128,10 @@
                 <select class="form-control input-lg" name="nuevoPerfil">
                   <option value="">Seleccionar perfil</option>
                   <option value="Administrador">Administrador</option>
-                  <option value="Especial">Especial</option>
-                  <option value="Vendedor">Vendedor</option>
+                  <option value="Calidad">Calidad</option>
+                  <option value="Comercial">Comercial</option>
+                  <option value="Comunicaciones">Comunicaciones</option>
+                  <option value="Auditoria">Auditoria</option>
                 </select>
               </div>
             </div>
@@ -201,8 +203,10 @@
                 <select class="form-control input-lg" name="editarPerfil">
                   <option value="" id="editarPerfil"></option>
                   <option value="Administrador">Administrador</option>
-                  <option value="Especial">Especial</option>
-                  <option value="Vendedor">Vendedor</option>
+                  <option value="Calidad">Calidad</option>
+                  <option value="Comercial">Comercial</option>
+                  <option value="Comunicaciones">Comunicaciones</option>
+                  <option value="Auditoria">Auditoria</option>
                 </select>
               </div>
             </div>
