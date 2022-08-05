@@ -19,8 +19,8 @@
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarProducto">Agregar producto</button>
       </div>
       <div class="box-body">
-        <table class="table table-bordered table-striped dt-responsive tablaProductos" width="100%">
-          <thead>            
+        <table class="table table-bordered table-striped dt-responsive tablas">
+          <thead>
             <tr>
               <th style="width: 10px;">#</th>
               <th>Imagen</th>
@@ -35,50 +35,64 @@
               <th>Acciones</th>
             </tr>
           </thead>
-
           <tbody>
+            <tr>
+              <td>1</td>
+              <td><img src="vistas\img\productos\default\anonymous.png" class="img-thumbnail" width="40px"></td>
+              <td>0001</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Lorem ipsum</td>
+              <td>20</td>
+              <td>$ 19.00</td>
+              <td>$ 25.00</td>
+              <td>2017-12-11 20:48:00</td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                </div>
+              </td>
+            </tr>
 
-          <?php
+            <tr>
+              <td>1</td>
+              <td><img src="vistas\img\productos\default\anonymous.png" class="img-thumbnail" width="40px"></td>
+              <td>0001</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Lorem ipsum</td>
+              <td>20</td>
+              <td>$ 19.00</td>
+              <td>$ 25.00</td>
+              <td>2017-12-11 20:48:00</td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                </div>
+              </td>
+            </tr>
 
-              $item = null;
-              $valor= null;
-              
-              $productos = ControladorProductos::ctrMostrarProductos($item,$valor);
-
-              foreach($productos as $key => $value){
-
-                echo'
-                <tr>
-                <td>'.($key+1).'</td>
-                <td><img src="vistas\img\productos\default\anonymous.png" class="img-thumbnail" width="40px"></td>
-                <td>'.$value["codigo"].'</td>
-                <td>'.$value["producto"].'</td>
-                <td>'.$value["descripcion"].'</td>';
-
-                $item = "id";
-                $valor = $value["id_categoria"];
-
-                $categoria = ControladorCategorias::ctrMostrarCategorias($item,$valor);
-
-                echo '<td>'.$categoria["categoria"].'</td>
-                <td>'.$value["stock"].'</td>
-                <td>'.$value["precio_compra"].'</td>
-                <td>'.$value["precio_venta"].'</td>
-                <td>'.$value["fecha"].'</td>
-                <td>
-                  <div class="btn-group">
-                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                    <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                  </div>
-                </td>
-              </tr>';
-
-              }
-
-          ?>    
-          
+            <tr>
+              <td>1</td>
+              <td><img src="vistas\img\productos\default\anonymous.png" class="img-thumbnail" width="40px"></td>
+              <td>0001</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Lorem ipsum</td>
+              <td>20</td>
+              <td>$ 19.00</td>
+              <td>$ 25.00</td>
+              <td>2017-12-11 20:48:00</td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                </div>
+              </td>
+            </tr>
           </tbody>
-
         </table>
       </div>
 
@@ -111,7 +125,7 @@
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
-                <input type="text" class="form-control input-lg" name="nuevoProducto" placeholder="Ingresar nombre de producto" required>
+                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre" required>
               </div>
             </div>
             <!-- Descripción de producto -->

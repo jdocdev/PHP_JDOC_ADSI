@@ -2,10 +2,13 @@
 
 class ControladorProductos{
 
-    static public function ctrProductos(){
+    //Mostrar productos
+    static public function ctrMostrarProductos($item,$valor){
 
-        include "vistas/productos.php";
+        $tabla = "productos";
+        $respuesta = ModeloProductos::mdlMostrarProductos($tabla,$item,$valor);
+        return $respuesta;
 
-    }
+    } 
 
 }
