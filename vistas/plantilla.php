@@ -17,9 +17,6 @@
   <!-- PLUGUINS CSS -->
 
   <!-- DataTable -->
-  <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
-
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
   <!-- Bootstrap 3.3.7 -->
