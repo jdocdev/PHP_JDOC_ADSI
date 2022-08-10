@@ -56,11 +56,30 @@
         </div>
         <div class="modal-body">
           <div class="box-body">
+             <!-- Selección de categoría -->
+             <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" required>
+                  <option value="" disabled>Seleccionar categoría</option>
+                  <?php                      
+                      $item = null;
+                      $valor = null;
+
+                      $categorias = ControladorCategorias::ctrMostrarCategorias($item,$valor);
+
+                      foreach($categorias as $key => $value){
+                        echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
+                      }
+                  ?>
+                </select>
+              </div>
+            </div>
             <!-- Código de producto -->
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-code"></i></span>
-                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar código" required>
+                <input type="text" class="form-control input-lg" id="nuevoCodigo" name="nuevoCodigo" placeholder="Ingresar código" required readonly>
               </div>
             </div>
             <!-- Nombre de producto -->
@@ -76,20 +95,7 @@
                 <span class="input-group-addon"><i class="fa fa-ticket"></i></span>
                 <input type="text" class="form-control input-lg" name="nuevaDescripcion" placeholder="Ingresar descripción" required>
               </div>
-            </div>
-            <!-- Selección de categoría -->
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
-                <select class="form-control input-lg" name="nuevaCategoria">
-                  <option value="">Seleccionar categoría</option>
-                  <option value="EH">ENCOFRADOS HORIZONTALES</option>
-                  <option value="EV">ENCOFRADOS VERTICALES</option>
-                  <option value="SE">SOLUCIONES ESPECIALES</option>
-                  <option value="MADE">MADE LÍNEA DE MADERAS</option>
-                </select>
-              </div>
-            </div>
+            </div>           
             <!-- Stock de producto -->
             <div class="form-group">
               <div class="input-group">
@@ -102,14 +108,14 @@
               <div class="col-xs-6">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span>
-                  <input type="number" class="form-control input-lg" name="nuevoPrecioCompra" min="0" placeholder="Precio de compra" required>
+                  <input type="number" class="form-control input-lg" id="nuevoPrecioCompra" name="nuevoPrecioCompra" min="0" placeholder="Precio de compra" required>
                 </div>
               </div>
               <!-- Precio de venta producto -->
               <div class="col-xs-6">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
-                  <input type="number" class="form-control input-lg" name="nuevoPrecioVenta" min="0" placeholder="Precio de venta" required>
+                  <input type="number" class="form-control input-lg" id="nuevoPrecioVenta" name="nuevoPrecioVenta" min="0" placeholder="Precio de venta" required>
                 </div>
                 <br>
                 <!-- Checkbox para calculo del porcentaje -->
@@ -144,6 +150,13 @@
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
       </form>
+
+      <?php
+
+          $crearProducto = new ControladorProductos();
+          $crearProducto -> ctrCrearProducto();
+
+      ?>
 
     </div>
   </div>
