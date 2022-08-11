@@ -22,7 +22,57 @@ class ControladorProductos{
 			   preg_match('/^[0-9.]+$/', $_POST["nuevoPrecioCompra"]) &&
 			   preg_match('/^[0-9.]+$/', $_POST["nuevoPrecioVenta"])){
 
+            // Validación de la imagen           
                 $ruta = "vistas/img/productos/default/anonymous.png";
+
+                if (isset($_FILES["nuevaImagen"]["tmp_name"])){
+
+                    list($ancho, $alto) = getimagesize($_FILES["nuevaImagen"]["tmp_name"]);
+
+                    $nuevoAncho = 500;
+                    $nuevoAlto = 500;
+
+                    // Crear directorio donde se almacenaran las imagenes
+                    $directorio = "vistas/img/productos/".$_POST["nuevoCodigo"];
+
+                    mkdir($directorio, 0755);
+
+                    // se aplican funciones de acuerdo al tipo de imagen
+                    if($_FILES["nuevaImagen"]["type"] == "image/jpeg") {
+
+                        // Guardar imagen en el directorio
+                        $aleatorio = mt_rand(100,999);
+
+                        $ruta = "vistas/img/productos/".$_POST["nuevoCodigo"]."/".$aleatorio.".jpg";
+
+                        $origen = imagecreatefromjpeg($_FILES["nuevaImagen"]["tmp_name"]);
+
+                        $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+                        imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+                        imagejpeg($destino, $ruta);
+
+                    }
+
+                    if($_FILES["nuevaImagen"]["type"] == "image/png") {
+
+                        // Guardar imagen en el directorio
+                        $aleatorio = mt_rand(100,999);
+
+                        $ruta = "vistas/img/productos/".$_POST["nuevoCodigo"]."/".$aleatorio.".png";
+
+                        $origen = imagecreatefrompng($_FILES["nuevaImagen"]["tmp_name"]);
+
+                        $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+                        imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+                        imagepng($destino, $ruta);
+
+                    }
+
+                }
 
                 $tabla = "productos";
 				$datos = array("id_categoria" => $_POST["nuevaCategoria"],

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2022 a las 03:33:53
+-- Tiempo de generación: 11-08-2022 a las 04:54:28
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.2
 
@@ -68,18 +68,20 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `producto`, `descripcion`, `imagen`, `stock`, `precio_compra`, `precio_venta`, `ventas`, `fecha`) VALUES
-(1, 100, '101', 'Supraflex FT', 'Encofrado para losa ', '', 20, 2500, 2700, 0, '2022-08-10 01:22:35'),
-(2, 100, '102', 'Supraflex MB120', 'Encofrado para losa infraestructura', '', 2, 2501, 2701, 0, '2022-08-10 01:22:28'),
-(3, 100, '103', 'Supraflex S20', 'Encofrado para losa con vigas de madera', '', 22, 2502, 2702, 0, '2022-08-10 01:22:43'),
-(4, 100, '104', 'Cimbra IE80 ', 'Andamio multidireccional', '', 23, 2503, 2703, 0, '2022-08-10 01:22:52'),
-(5, 100, '105', 'Cimbra IE40', 'Andamio de fachada', '', 6, 2504, 2704, 0, '2022-08-10 01:23:03'),
-(6, 100, '106', 'Torre de carga MR40', 'Andamio de carga tipo marco', '', 25, 2505, 2705, 0, '2022-08-10 01:23:11'),
-(7, 101, '107', 'Puntales IE', 'Puntales galvanizados', '', 26, 2506, 2706, 0, '2022-08-10 01:23:20'),
-(8, 200, '201', 'Formax Plus', 'Encofrado para muro ', '', 27, 2507, 2707, 0, '2022-08-10 01:24:09'),
-(9, 300, '301', 'Sistemas de túneles', 'Para minas y obras maritimas', '', 28, 2508, 2708, 0, '2022-08-10 01:24:00'),
-(10, 400, '401', 'Tablero fenolico Birch', 'Tablero de madera', '', 29, 2509, 2709, 0, '2022-08-10 01:24:23'),
+(1, 100, '101', 'Supraflex FT', 'Encofrado para losa ', 'vistas/img/productos/default/anonymous.png', 20, 2500, 2700, 0, '2022-08-10 01:38:29'),
+(2, 100, '102', 'Supraflex MB120', 'Encofrado para losa infraestructura', 'vistas/img/productos/default/anonymous.png', 2, 2501, 2701, 0, '2022-08-10 01:38:21'),
+(3, 100, '103', 'Supraflex S20', 'Encofrado para losa con vigas de madera', 'vistas/img/productos/default/anonymous.png', 22, 2502, 2702, 0, '2022-08-10 01:38:14'),
+(4, 100, '104', 'Cimbra IE80 ', 'Andamio multidireccional', 'vistas/img/productos/default/anonymous.png', 23, 2503, 2703, 0, '2022-08-10 01:38:07'),
+(5, 100, '105', 'Cimbra IE40', 'Andamio de fachada', 'vistas/img/productos/default/anonymous.png', 6, 2504, 2704, 0, '2022-08-10 01:37:37'),
+(6, 100, '106', 'Torre de carga MR40', 'Andamio de carga tipo marco', 'vistas/img/productos/default/anonymous.png', 25, 2505, 2705, 0, '2022-08-10 01:37:27'),
+(7, 100, '107', 'Puntales IE', 'Puntales galvanizados', 'vistas/img/productos/default/anonymous.png', 26, 2506, 2706, 0, '2022-08-10 01:37:56'),
+(8, 200, '201', 'Formax Plus', 'Encofrado para muro ', 'vistas/img/productos/default/anonymous.png', 27, 2507, 2707, 0, '2022-08-10 01:37:12'),
+(9, 300, '301', 'Sistemas de túneles', 'Para minas y obras maritimas', 'vistas/img/productos/default/anonymous.png', 28, 2508, 2708, 0, '2022-08-10 01:37:03'),
+(10, 400, '401', 'Tablero fenolico Birch', 'Tablero de madera', 'vistas/img/productos/default/anonymous.png', 29, 2509, 2709, 0, '2022-08-10 01:36:56'),
 (11, 200, '202', 'Formax Nuvo', 'Encofrado ligero para muro', 'vistas/img/productos/default/anonymous.png', 50, 500, 700, 0, '2022-08-10 01:32:19'),
-(12, 200, '203', 'Formax Pilar Plus', 'Encofrado para columna', 'vistas/img/productos/default/anonymous.png', 120, 400, 560, 0, '2022-08-10 01:33:23');
+(12, 200, '203', 'Formax Pilar Plus', 'Encofrado para columna', 'vistas/img/productos/default/anonymous.png', 120, 400, 560, 0, '2022-08-10 01:33:23'),
+(13, 200, '204', 'Formax Circular', 'Encofrado muro circular', 'vistas/img/productos/default/anonymous.png', 54, 99.99, 139.986, 0, '2022-08-11 02:34:31'),
+(14, 200, '205', 'Formax PM', 'Encofrados para columnas circulares', 'vistas/img/productos/205/730.png', 87, 98.99, 138.586, 0, '2022-08-11 02:51:28');
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
