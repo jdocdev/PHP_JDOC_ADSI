@@ -222,3 +222,32 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
   })
 
 })
+
+// Eliminar Producto
+$(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
+
+	var idProducto = $(this).attr("idProducto");
+	var codigo = $(this).attr("codigo");
+	var imagen = $(this).attr("imagen");
+	
+	swal({
+
+		title: 'Eliminar producto',
+		text: "¡Está acción es irreversible!",
+		type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: '¡Eliminar!'
+        }).then(function(result){
+        if (result.value) {
+
+        	window.location = "index.php?ruta=productos&idProducto="+idProducto+"&imagen="+imagen+"&codigo="+codigo;
+
+        }
+
+
+	})
+
+})

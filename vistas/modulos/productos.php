@@ -61,7 +61,7 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-th"></i></span>
                 <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" required>
-                  <option value="" disabled>Seleccionar categoría</option>
+                  <option value="">Categoría genérica</option>
                   <?php                      
                       $item = null;
                       $valor = null;
@@ -269,3 +269,10 @@
 
     </div>
   </div>
+
+<?php
+
+  $eliminarProducto = new ControladorProductos();
+  $eliminarProducto -> ctrEliminarProducto();
+
+?> 

@@ -138,7 +138,7 @@ class ControladorProductos{
             // Validación de la imagen           
                 $ruta = $_POST["imagenActual"];
 
-                if (isset($_FILES["editarImagen"]["tmp_name"])){
+                if (isset($_FILES["editarImagen"]["tmp_name"]) && !empty($_FILES["editarImagen"]["tmp_name"])){
 
                     list($ancho, $alto) = getimagesize($_FILES["editarImagen"]["tmp_name"]);
 
@@ -243,5 +243,41 @@ class ControladorProductos{
         }
 
     }
+
+// Eliminar Producto
+    static public function ctrEliminarProducto(){
+
+		if(isset($_GET["idProducto"])){
+			$tabla ="productos";
+			$datos = $_GET["idProducto"];
+
+			if($_GET["imagen"] != "" && $_GET["imagen"] != "vistas/img/productos/default/anonymous.png"){
+				unlink($_GET["imagen"]);
+				rmdir('vistas/img/productos/'.$_GET["codigo"]);
+			}
+
+			$respuesta = ModeloProductos::mdlEliminarProducto($tabla, $datos);
+			if($respuesta == "ok"){
+				echo'<script>
+
+				swal({
+					  type: "success",
+					  title: "El producto ha sido borrado correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar"
+					  }).then((result) => {
+								if (result.value) {
+
+								window.location = "productos";
+
+								}
+							})
+
+				</script>';
+
+			}		
+		}
+
+	}
 
 }
