@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
   <!-- Plugin icheck -->
-  <link rel="stylesheet" href="vistas/plugins/iCheck/all.css">
+  <link rel="stylesheet" href="vistas/plugins/iCheck/all.css">  
 
   <!-- PLUGUINS JAVASCRIPT -->
 
@@ -53,6 +53,10 @@
   <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
   <!-- iCheck 1.0.1 -->
   <script src="vistas/plugins/iCheck/icheck.min.js"></script>  
+  <!-- InputMask -->
+  <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.extensions.js"></script>
 </head>
 
 <body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
