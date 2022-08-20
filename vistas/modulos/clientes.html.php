@@ -166,13 +166,6 @@
         </div>
       </form>
 
-      <?php
-          
-          $crearCliente = new ControladorClientes();
-          $crearCliente -> ctrCrearCliente();
-
-      ?>
-
     </div>
   </div>
 </div>

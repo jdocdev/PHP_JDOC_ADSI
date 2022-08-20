@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-08-2022 a las 03:25:28
+-- Tiempo de generación: 20-08-2022 a las 06:33:11
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.2
 
@@ -46,6 +46,31 @@ INSERT INTO `categorias` (`id`, `categoria`, `descripcion`, `fecha`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `nombre` text NOT NULL,
+  `documento` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `telefono` text NOT NULL,
+  `direccion` text NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
+  `compras` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`, `fecha`) VALUES
+(1, 'Juan Ortiz', 1754124685, 'juan@example.com', '(300) 548-3127', 'Calle 47 #75-13', '1994-02-05', 0, '2022-08-20 04:32:40');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `productos`
 --
 
@@ -81,7 +106,9 @@ INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `producto`, `descripcio
 (11, 200, '202', 'Formax Nuvo', 'Encofrado ligero para muro', 'vistas/img/productos/202/373.png', 50, 500, 700, 0, '2022-08-12 01:24:03'),
 (12, 200, '203', 'Formax Pilar Plus', 'Encofrado para columna', 'vistas/img/productos/203/290.png', 120, 400, 560, 0, '2022-08-12 01:24:56'),
 (13, 200, '204', 'Formax Circular', 'Encofrado muro circular', 'vistas/img/productos/204/906.png', 54, 50, 70, 0, '2022-08-12 01:15:36'),
-(14, 200, '205', 'Formax PM', 'Encofrados para columnas circulares', 'vistas/img/productos/205/730.png', 87, 98.99, 138.586, 0, '2022-08-11 02:51:28');
+(14, 200, '205', 'Formax PM', 'Encofrados para columnas circulares', 'vistas/img/productos/205/730.png', 87, 98.99, 138.586, 0, '2022-08-11 02:51:28'),
+(18, 200, '206', 'Peak', 'Consolas trepantes', 'vistas/img/productos/206/295.png', 12, 231, 323.4, 0, '2022-08-13 01:22:40'),
+(19, 200, '207', 'Panel liviano', 'Paneles portables y accesorios de rápido ensamble', 'vistas/img/productos/207/191.png', 123, 1231, 1723.4, 0, '2022-08-13 01:24:43');
 
 -- --------------------------------------------------------
 
@@ -106,11 +133,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Juan Ortiz', 'jdoc', '$2a$07$usesomesillystringforeKOuYMWUWeSJOrbntG03s1r0uZaWFQ6a', 'Calidad', 'vistas/img/usuarios/jdoc/740.png', 1, '2022-08-03 20:21:45', '2022-08-04 01:21:45'),
+(1, 'Juan David', 'jdoc', '$2a$07$usesomesillystringforeKOuYMWUWeSJOrbntG03s1r0uZaWFQ6a', 'Calidad', 'vistas/img/usuarios/jdoc/740.png', 1, '2022-08-03 20:21:45', '2022-08-15 01:40:37'),
 (11, 'Sandra', 'smat', '$2a$07$usesomesillystringforeAsrcUvSHfvjeXZVab95KMzVFTKHMno6', 'Comunicaciones', 'vistas/img/usuarios/smat/541.png', 1, '2022-07-28 20:21:36', '2022-07-29 01:29:19'),
-(13, 'Administrador', 'admin', '$2a$07$usesomesillystringforegFOeQOp8RK/V8Yn0LZIZwSlh5IkndD.', 'Administrador', 'vistas/img/usuarios/admin/907.png', 1, '2022-08-08 21:02:49', '2022-08-09 02:02:49'),
-(14, 'Felixa', 'felixa', '$2a$07$usesomesillystringfore/8DuLOJO10KZhYu1Ds3c.Ho3cJFcipW', 'Comercial', 'vistas/img/usuarios/felixa/273.png', 1, '2022-07-28 20:30:17', '2022-07-29 01:30:17'),
-(15, 'Brisa', 'brisa', '$2a$07$usesomesillystringforeYOH51VS4Rx8j79miMvxvbu18Go.NFDa', 'Auditoria', 'vistas/img/usuarios/brisa/515.png', 1, '2022-07-28 20:30:38', '2022-07-29 01:30:38');
+(13, 'Administrador', 'admin', '$2a$07$usesomesillystringforegFOeQOp8RK/V8Yn0LZIZwSlh5IkndD.', 'Administrador', 'vistas/img/usuarios/admin/907.png', 1, '2022-08-13 22:13:57', '2022-08-14 03:13:57'),
+(14, 'Felixa', 'felixa', '$2a$07$usesomesillystringfore/8DuLOJO10KZhYu1Ds3c.Ho3cJFcipW', 'Comercial', 'vistas/img/usuarios/felixa/273.png', 1, '2022-08-14 20:29:10', '2022-08-15 01:29:10'),
+(15, 'Brisa', 'brisa', '$2a$07$usesomesillystringforeYOH51VS4Rx8j79miMvxvbu18Go.NFDa', 'Auditoria', 'vistas/img/usuarios/brisa/515.png', 1, '2022-07-28 20:30:38', '2022-07-29 01:30:38'),
+(16, 'Ramona', 'ramona', '$2a$07$usesomesillystringforewe7qzEJtMmo4B8NSrsfm2fbWNHa5DjG', 'Auditoria', 'vistas/img/usuarios/ramona/196.png', 1, '0000-00-00 00:00:00', '2022-08-15 01:40:18');
 
 --
 -- Índices para tablas volcadas
@@ -120,6 +148,12 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`,
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -142,17 +176,22 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=401;
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
