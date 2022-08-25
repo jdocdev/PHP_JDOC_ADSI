@@ -35,65 +35,38 @@
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Juan Ortiz</td>   
-              <td>12347547895</td>
-              <td>juan@example.com</td>
-              <td>3017542685</td>
-              <td>Calle 12 #34-56</td>   
-              <td>19-01-1994</td>
-              <td>19</td>
-              <td>2022-08-19 19:19:19</td>    
-              <td>2022-07-19 19:19:19</td>                  
-              <td>
-                <div class="btn-group">
-                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Juan Ortiz</td>   
-              <td>12347547895</td>
-              <td>juan@example.com</td>
-              <td>3017542685</td>
-              <td>Calle 12 #34-56</td>   
-              <td>19-01-1994</td>
-              <td>19</td>
-              <td>2022-08-19 19:19:19</td>    
-              <td>2022-07-19 19:19:19</td>                  
-              <td>
-                <div class="btn-group">
-                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Juan Ortiz</td>   
-              <td>12347547895</td>
-              <td>juan@example.com</td>
-              <td>3017542685</td>
-              <td>Calle 12 #34-56</td>   
-              <td>19-01-1994</td>
-              <td>19</td>
-              <td>2022-08-19 19:19:19</td>    
-              <td>2022-07-19 19:19:19</td>                  
-              <td>
-                <div class="btn-group">
-                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                </div>
-              </td>
-            </tr>
+          <tbody> 
+            <?php
+
+              $item = null;
+              $valor = null;
+
+              $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+              foreach ($clientes as $key => $value) {  
+
+                echo '<tr>
+                        <td>'.($key+1).'</td>
+                        <td>'.$value["nombre"].'</td>
+                        <td>'.$value["documento"].'</td>
+                        <td>'.$value["email"].'</td>
+                        <td>'.$value["telefono"].'</td>
+                        <td>'.$value["direccion"].'</td>
+                        <td>'.$value["fecha_nacimiento"].'</td> 
+                        <td>'.$value["compras"].'</td>
+                        <td>2022-08-19 19:19:19</td>
+                        <td>'.$value["fecha"].'</td>
+                        <td>
+                          <div class="btn-group">                            
+                            <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>
+                          </div>  
+                        </td>
+                      </tr>';
+
+                }
+
+            ?>
           </tbody>
         </table>
       </div>
