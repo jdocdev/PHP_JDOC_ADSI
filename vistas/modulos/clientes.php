@@ -149,3 +149,77 @@
     </div>
   </div>
 </div>
+
+<!-- Ventana Modal editar cliente -->
+<div id="modalEditarCliente" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <form class="form" method="post">
+        <div class="modal-header" style="background-color:#3c8dbc; color:#fff;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Editar cliente</h4>
+        </div>
+        <div class="modal-body">
+          <div class="box-body">
+            <!-- Editar nombre cliente -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control input-lg" name="editarCliente" id="editarCliente" required>
+                <input type="hidden" name="idCliente" id="idCliente">
+              </div>
+            </div>
+            <!-- Editar documento de identificación cliente -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input type="number" min="0" class="form-control input-lg" name="editarDocumentoId" id="editarDocumentoId" required>
+              </div>
+            </div>
+            <!-- Editar email cliente -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <input type="email" class="form-control input-lg" name="editarEmail" id="editarEmail" required>
+              </div>
+            </div>
+            <!-- Editar télefono cliente -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                <input type="text" class="form-control input-lg" name="editarTelefono" id="editarTelefono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+              </div>
+            </div>
+            <!-- Editar dirección cliente -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                <input type="text" class="form-control input-lg" name="editarDireccion" id="editarDireccion" required>
+              </div>
+            </div>
+            <!-- Editar fecha de nacimiento -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input type="text" class="form-control input-lg" name="editarFechaNacimiento" id="editarFechaNacimiento" data-inputmask="'alias':'yyyy/mm/dd'" data-mask required>
+              </div>
+            </div>            
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+
+      <?php
+          
+          $crearCliente = new ControladorClientes();
+          $crearCliente -> ctrEditarCliente();
+
+      ?>
+
+    </div>
+  </div>
+</div>
