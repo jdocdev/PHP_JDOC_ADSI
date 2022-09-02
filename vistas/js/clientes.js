@@ -29,3 +29,30 @@ $(".tablas").on("click", ".btnEditarCliente", function(){
   	})
 
 })
+
+// Eliminar clientes
+
+$(".btnEliminarCliente").click(function(){
+
+    var idCliente = $(this).attr("idCliente");    
+
+        swal({
+            title: 'Eliminar el cliente',
+            text: "¡Está acción es irreversible!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: '¡Eliminar!'        
+        }).then((result)=>{
+    
+            if(result.value){
+    
+                window.location = "index.php?ruta=clientes&idCliente="+idCliente;
+    
+            }
+            
+        })
+
+})
